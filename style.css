@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Slabo+27px&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+  --white-color: hsl(0, 0%, 96%);
+  --black-color: hsl(0, 0%, 0%);
+  --body-font: "Space Grotesk", sans-serif;
+  --slabo-font: 'Slabo 27px', serif;
+  --biggest-font-size: 3rem;
+  --normal-font-size: .938rem;
+  --font-regular: 400;
+  --font-bold: 700;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 6.5rem;
+    --big-font-size: 2rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);
+  font-weight: var(--font-bold);
+}
+
+.portfolio-main {
+  display: flex;
+  min-height: 100vh;
+}
+
+.portfolio-sidebar {
+  background: var(--white-color);
+  border-right: 2px solid var(--black-color);
+  flex: 2;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.profile-img img {
+  border-radius: 50%;
+  border: 3px solid var(--black-color);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+}
+
+.name {
+  font-family: var(--slabo-font);
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.about {
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: var(--font-regular);
+  color: var(--black-color);
+}
+
+.resume-btn {
+  display: inline-block;
+  background: var(--black-color);
+  color: var(--white-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-family: var(--body-font);
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+
+.resume-btn:hover {
+  background: #222;
+}
+
+/* Social icons container after resume button */
+.social-links-extended {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links-extended a {
+  font-size: 1.5rem;
+  background: var(--white-color);
+  border: 2px solid var(--black-color);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--slabo-font);
+  color: var(--black-color);
+  transition: background 0.2s, color 0.2s;
+}
+
+.social-links-extended a:hover {
+  background: #eee;
+  color: var(--black-color);
+}
+
+.portfolio-content {
+  flex: 3;
+  padding: 3rem 2rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+.dark-mode-toggle {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--black-color);
+  z-index: var(--z-fixed);
+}
+
+
+body.dark-mode .dark-mode-toggle {
+  color: var(--white-color);
+}
+
+.proof-heading {
+  text-align: center;
+  font-family: var(--slabo-font);
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--black-color);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 1.2rem;
+}
+
+.project h3 {
+  font-size: 1.3rem;
+  font-family: var(--slabo-font);
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+  max-width: 540px;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-btn {
+  font-size: 1rem;
+  font-weight: var(--font-bold);
+  color: var(--black-color);
+  border: 2px solid var(--black-color);
+  border-radius: 1rem;
+  padding: 0.4rem 1.2rem;
+  font-family: var(--body-font);
+  background: var(--white-color);
+  text-align: center;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.project-btn:hover {
+  background: #eee;
+}
+
+
+
+/* === Dark mode styles updated === */
+
+body.dark-mode {
+  background-color: #141618;
+  color: #e0e0e0; /* light font color for dark mode */
+}
+
+body.dark-mode .portfolio-sidebar {
+  background-color: #141618;
+  border-color: #2a2d30; 
+  /* subtle border color for dark mode */
+}
+
+body.dark-mode a {
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+body.dark-mode p {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .profile-img img {
+  border-color: #e0e0e0 !important;
+}
+
+body.dark-mode .resume-btn {
+  background-color: #e0e0e0;
+  color: #141618;
+}
+
+body.dark-mode .proof-heading {
+  border-color: #e0e0e0;
+}
+
+
+body.dark-mode .project-btn {
+  background-color: #2a2d30;
+  color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+body.dark-mode .project-btn:hover {
+  background-color: #3a3d40;
+}
+
+body.dark-mode .social-links-extended a {
+  background: #2a2d30;
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: #e0e0e0;
+}
+
+
+
+/* === Resize SVG icons in media links and toggle button === */
+.profile-img img,
+.social-links-extended img,
+.dark-mode-toggle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.profile-img img {
+  width: 120px;
+  height: 120px;
+}
+
+/* === Responsive adjustments for smaller screens === */
+@media (max-width: 900px) {
+  .portfolio-main {
+    flex-direction: column;
+  }
+  .portfolio-sidebar {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid var(--black-color);
+    flex: unset;
+    padding-bottom: 1.5rem;
+  }
+  .portfolio-content {
+    padding: 2rem 1rem;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .profile-img img {
+    width: 100px;
+    height: 100px;
+  }
+  .social-links-extended img,
+  .dark-mode-toggle img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-img img {
+    width: 80px;
+    height: 80px;
+  }
+  .social-links-extended img,
+  .dark-mode-toggle img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .project-btn {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+}
