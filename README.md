@@ -53,4 +53,4 @@ This project is open source and free to use for your personal or professional po
 > Created for clarity, professionalism, and maximum recruiter impact.
 
 
-*Created by Shresth Kasera*
+*~Created by Shresth Kasera*
